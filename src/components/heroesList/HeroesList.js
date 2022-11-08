@@ -1,7 +1,6 @@
 import { useHttp } from "../../hooks/http.hook";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   heroesFetching,
   heroesFetched,
@@ -39,7 +38,7 @@ const HeroesList = () => {
     if (arr.length === 0) {
       return <h5 className="text-center mt-5">Героев пока нет</h5>;
     }
-
+    console.log("render list with arr:", { arr });
     return arr.map(({ id, ...props }) => {
       return <HeroesListItem key={id} id={id} {...props} />;
     });

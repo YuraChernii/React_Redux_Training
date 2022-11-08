@@ -1,14 +1,9 @@
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  heroesFetching,
-  heroesFetched,
-  heroesFetchingError,
-  heroesDeleted,
-} from "../../actions";
+import { heroesFetchingError, heroesDeleted } from "../../actions";
 
 const HeroesListItem = ({ id, name, description, element }) => {
-  const { heroes, heroesLoadingStatus } = useSelector((state) => state);
+  console.log("render item with id:", id);
   const dispatch = useDispatch();
 
   const { request } = useHttp();
