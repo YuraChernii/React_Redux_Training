@@ -16,12 +16,6 @@ const HeroesFilters = () => {
     dispatch(updateHeroFilter(filterName));
   };
 
-  var btnClass = classNames({
-    btn: true,
-    "btn-pressed": this.state.isPressed,
-    "btn-over": !this.state.isPressed && this.state.isHovered,
-  });
-
   return (
     <div className="card shadow-lg mt-4">
       <div className="card-body">

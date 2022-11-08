@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form } from "formik";
 import { heroAdd } from "../../actions";
 import { useHttp } from "../../hooks/http.hook";
+import "../../styles/transition.scss";
 import { heroesFetchingError, heroesDeleted } from "../../actions";
 
 // Задача для этого компонента:
@@ -25,13 +26,11 @@ const HeroesAddForm = () => {
       description: item.text,
       element: item.element,
     };
-    debugger;
     let data = await request(
       `http://localhost:3001/heroes`,
       "POST",
       JSON.stringify(newItem)
     );
-    debugger;
     dispatch(heroAdd(newItem));
   };
 
